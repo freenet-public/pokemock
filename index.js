@@ -1,0 +1,20 @@
+module.exports = {
+  dispatch: require( './lib/dispatch' ),
+  apiDocs: require( './lib/middleware/apiDocs' ),
+  ui: require( './lib/middleware/ui' ),
+  kill: require( './lib/middleware/kill' ),
+  swagger: require( './lib/middleware/swagger' ),
+  replay: require( './lib/middleware/replay' ),
+  chance: require( './lib/middleware/chance' ),
+  classify: require( './lib/middleware/classify' ),
+  memory: require( './lib/middleware/memory' ),
+  status: require( './lib/middleware/status' ),
+  time: require( './lib/middleware/time' ),
+  mock: require( './lib/middleware/mock' ),
+  override: require( './lib/middleware/override' ),
+  notFound: require( './lib/middleware/notFound' ),
+  sendError: require( './lib/middleware/sendError' ),
+  send: require( './lib/middleware/send' ),
+  generate: require( './lib/generate' ),
+  generate2: require( './lib/generate2' )
+};

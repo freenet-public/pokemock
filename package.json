@@ -1,0 +1,33 @@
+{
+  "name": "pokemock",
+  "version": "1.0.0",
+  "contributors": [
+    "Frederik Priede <frederik.priede@md.de>",
+    "Morris Brodersen <mb@morrisbrodersen.de> (http://morrisbrodersen.de)"
+  ],
+  "license": "MIT",
+  "bin": {
+    "pokemock": "./bin/pokemock"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha test"
+  },
+  "dependencies": {
+    "chance": "^1.0.4",
+    "express": "^4.14.0",
+    "fast-levenshtein": "^2.0.5",
+    "json-schema-ref-parser": "^3.1.2",
+    "jsonpath": "^0.2.7",
+    "lodash": "^4.16.3",
+    "minimist": "^1.2.0",
+    "server-destroy": "^1.0.1",
+    "swagger-express-middleware": "^1.0.0-alpha.12",
+    "swagger-ui": "^2.2.5"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "request": "^2.75.0"
+  }
+}

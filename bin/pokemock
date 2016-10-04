@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var pokemock = require( '../' );
+var createApp = require( '../createDefaultApp' );
+
+pokemock.dispatch( process.argv.slice( 2 ), createApp ).catch( function ( err ) {
+  console.log( err.stack );
+  process.exit( 1 );
+} );
