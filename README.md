@@ -86,7 +86,7 @@ For example, requesting a deleted entity will result in a 404 response.
 
 ## Customization
 
-Pokemock provides a set of [Express](http://expressjs.com/de/) middlewares
+Pokemock provides a set of [Express](http://expressjs.com) middlewares
 which you can use independently.
 The default app defined in `createDefaultApp.js` is an opinionated stack of
 middlewares which you're encouraged to hack on.
