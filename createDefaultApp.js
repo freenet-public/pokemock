@@ -45,7 +45,7 @@ function createDefaultApp( api, options ) {
       generate.boolean,
       generate.array,
       generate.object
-    ] ),
+    ], options.static ),
     pokemock.override,
     pokemock.classify,
     pokemock.memory( options ),
