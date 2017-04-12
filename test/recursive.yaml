@@ -1,0 +1,26 @@
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: Recursive
+basePath: /recursive
+paths:
+  /:
+    get:
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Recursive"
+definitions:
+  Recursive:
+    properties:
+      id:
+        type: string
+      other:
+        $ref: '#/definitions/Other'
+  Other:
+    properties:
+      name:
+        type: string
+      recursive:
+        $ref: '#/definitions/Recursive'
