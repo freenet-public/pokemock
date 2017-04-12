@@ -15,21 +15,21 @@
     "test": "node node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha test"
   },
   "dependencies": {
-    "chance": "^1.0.4",
-    "express": "^4.14.0",
-    "fast-levenshtein": "^2.0.5",
+    "chance": "^1.0.6",
+    "express": "^4.15.2",
+    "fast-levenshtein": "^2.0.6",
     "json-schema-ref-parser": "^3.1.2",
-    "jsonpath": "^0.2.7",
-    "lodash": "^4.16.3",
+    "jsonpath": "^0.2.11",
+    "lodash": "^4.17.4",
     "minimist": "^1.2.0",
     "server-destroy": "^1.0.1",
     "swagger-express-middleware": "^1.0.0-alpha.12",
-    "swagger-ui": "^2.2.5"
+    "swagger-ui": "^2.2.10"
   },
   "devDependencies": {
     "istanbul": "^0.4.5",
-    "mocha": "^3.1.0",
-    "request": "^2.75.0"
+    "mocha": "^3.2.0",
+    "request": "^2.81.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
