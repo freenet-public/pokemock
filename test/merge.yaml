@@ -4,34 +4,25 @@ info:
   title: Recursive
 basePath: /recursive
 paths:
-  /:
+  /merged:
     get:
       security:
-        - test: []
-        - test: [ "wow" ]
+        - test: [ "merged" ]
       responses:
         200:
           description: OK
           schema:
-            $ref: "#/definitions/Recursive"
+            $ref: "#/definitions/Other"
 definitions:
-  Recursive:
-    properties:
-      id:
-        type: string
-      other:
-        $ref: '#/definitions/Other'
   Other:
     properties:
       name:
         type: string
-      recursive:
-        $ref: '#/definitions/Recursive'
 securityDefinitions:
   test:
     type: apiKey
     in: header
-    name: X-Api-Key
+    name: X-Consumer-Key
 security:
-  - test: []
-  - test: [ "wow" ]
+  - test: [ 'merged' ]
+  - test: [ "merged2" ]
