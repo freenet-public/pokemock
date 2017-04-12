@@ -5,18 +5,18 @@ var generate2 = pokemock.generate2;
 
 module.exports = createDefaultApp;
 
-function createDefaultApp( api, options ) {
+function createDefaultApp( apis, options ) {
 
   options = options || {};
   var app = express();
 
-  app.get( '/api-docs', pokemock.apiDocs( api ) );
+  app.get( '/api-docs', pokemock.apiDocs( apis ) );
   app.use( '/ui', pokemock.ui );
 
   if ( options.killable ) app.use( '/kill', pokemock.kill );
 
   app.use(
-    pokemock.swagger( api, app ),
+    pokemock.swagger( apis, app ),
     pokemock.replay(),
     pokemock.chance,
     pokemock.time,

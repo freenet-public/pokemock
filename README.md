@@ -1,6 +1,6 @@
 # Pokemock
 
-A mock server generated from an arbitrary Swagger file.
+A mock server generated from one or more arbitrary Swagger files.
 Supports seeding, timeouts, response picking,
 entity memory, semantic action inference, etc.
 
@@ -9,7 +9,7 @@ entity memory, semantic action inference, etc.
 
 ```
 Syntax:
-  pokemock <swagger-url-or-file> [-h] [-v] [-w] [-p <port>]
+  pokemock <swagger-urls-or-files> ... [-h] [-v] [-w] [-p <port>]
 
 Options:
   -h, --help        Show help
@@ -86,7 +86,7 @@ For example, requesting a deleted entity will result in a 404 response.
 
 ## Customization
 
-Pokemock provides a set of [Express](http://expressjs.com) middlewares
+Pokemock provides a set of [Express](http://expressjs.com/de/) middlewares
 which you can use independently.
 The default app defined in `createDefaultApp.js` is an opinionated stack of
 middlewares which you're encouraged to hack on.
