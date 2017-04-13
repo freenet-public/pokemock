@@ -30,6 +30,12 @@ describe( 'The Pokemock server', function () {
     } );
   } );
 
+  it( 'should publish Swagger UI assets', function () {
+    return request( url + '/ui/swagger-ui.js' ).then( function ( res ) {
+      assert.equal( res.statusCode, 200 );
+    } );
+  } );
+
   it( 'should generate mock data', function () {
     return request( url + '/v2/pet/findByStatus?status=available' ).then( function ( res ) {
       assert.equal( res.statusCode, 200 );
