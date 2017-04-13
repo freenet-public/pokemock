@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.2
+
+- Fix `public/index.html`: Use relative `/api-docs` URL
+
 ## v1.1.1
 
 - Fix `ui` middleware: Correctly resolve public directory of `swagger-ui`
