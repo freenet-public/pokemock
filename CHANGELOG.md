@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.3
+
+- Disable validator in UI
+
 ## v1.1.2
 
 - Fix `public/index.html`: Use relative `/api-docs` URL
