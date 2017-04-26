@@ -46,9 +46,17 @@ function createDefaultApp( apis, options ) {
       generate.array,
       generate.object
     ] ),
-    pokemock.override,
-    pokemock.classify,
-    pokemock.memory( options ),
+    pokemock.override
+  );
+
+  if ( options.memory ) {
+    app.use(
+      pokemock.classify,
+      pokemock.memory( options )
+    );
+  }
+
+  app.use(
     pokemock.send,
     pokemock.notFound,
     pokemock.sendError

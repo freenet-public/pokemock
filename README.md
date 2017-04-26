@@ -17,6 +17,7 @@ Options:
   -p, --port <port> Set server port, default is 8000
   -w, --watch       Watch mode: Restart on Swagger changes
   -k, --killable    Publish /kill endpoint to stop the service
+      --memory      Enable memory module (experimental)
 ```
 
 
@@ -54,10 +55,6 @@ Using optional headers, clients can control the server's behavior:
   - Specifies response data via [JSON Path](https://github.com/dchester/jsonpath)
   - Must be a valid JSON object of `<jsonPath>: <data>` pairs
   - `<data>` is arbitrary JSON
-- __X-Mock-Memory__
-  - Specifies memory usage
-  - If set to 0, disable memory features
-  - Memory is enabled by default
 - __X-Mock-Replay__
   - Specifies the number of times the current X-Mock-* headers should be replayed
   - The next N requests to the requested URL will replay the current X-Mock-* headers
@@ -66,9 +63,10 @@ Using optional headers, clients can control the server's behavior:
   - If omitted, the exact path is used for replaying
 
 
-## Memory
+## Memory (experimental)
 
-Whenever an entity containing an ID is generated it is remembered by the server.
+Use the `--memory` switch to enable the memory module.
+When enabled, entities containing an ID are remembered by the server.
 If the entity is requested again, the remembered data is returned.
 This also applies to sub-entities across endpoints.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+- Memory module is now experimental and opt-in
+
 ## v1.1.3
 
 - Disable validator in UI

@@ -42,36 +42,7 @@ describe( 'The Pokemock server', function () {
     } );
   } );
 
-  it( 'should remember generated objects by ID', function () {
-    var customer;
-    return request( url + '/v2/pet/5', options ).then( function ( res ) {
-      assert.equal( res.statusCode, 200 );
-      customer = res.body;
-      return request( url + '/v2/pet/5', options );
-    } ).then( function ( res ) {
-      assert.deepEqual( res.body, customer );
-    } );
-  } );
-
-  it( 'should delete objects by ID', function () {
-    return request( url + '/v2/pet/6', options ).then( function ( res ) {
-      assert.equal( res.statusCode, 200 );
-      return request( url + '/v2/pet/6', {
-        method: 'DELETE',
-        api_key: 'siegmeyer'
-      } );
-    } ).then( function ( res ) {
-      return request( url + '/v2/pet/6', options );
-    } ).then( function ( res ) {
-      assert.equal( res.statusCode, 404 );
-    } );
-  } );
-
-  it.skip( 'should update objects by ID', function () {
-
-  } );
-
-  it( 'should create objects', function () {
+  it( 'should accept objects', function () {
     return request( url + '/v2/pet', {
       method: 'POST',
       body: {
@@ -141,7 +112,7 @@ describe( 'The Pokemock server', function () {
     } ).then( function () {
       return request( url + '/v2/pet/4', options );
     } ).then( function ( res ) {
-      assert.equal( res.body.id, '4' );
+      assert.ok( res.body.id );
       assert.equal( res.statusCode, 200 );
     } );
   } );
