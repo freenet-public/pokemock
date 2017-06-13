@@ -20,34 +20,42 @@ function createDefaultApp( apis, options ) {
     pokemock.replay(),
     pokemock.chance,
     pokemock.time,
-    pokemock.status,
-    pokemock.mock( [
-      generate.id,
-      generate2.birthday,
-      generate2.email,
-      generate2.url,
-      generate2.phone,
-      generate2.city,
-      generate2.country,
-      generate2.street,
-      generate2.zip,
-      generate2.houseNo,
-      generate2.prefix,
-      generate2.first,
-      generate2.last,
-      generate2.description,
-      generate2.summary,
-      generate2.label,
-      generate2.price,
-      generate.string,
-      generate.number,
-      generate.integer,
-      generate.boolean,
-      generate.array,
-      generate.object
-    ] ),
-    pokemock.override
+    pokemock.status
   );
+
+  if ( options.examples ) {
+    app.use(pokemock.examples());
+  } else {
+    app.use(
+      pokemock.mock( [
+        generate.id,
+        generate2.birthday,
+        generate2.email,
+        generate2.url,
+        generate2.phone,
+        generate2.city,
+        generate2.country,
+        generate2.street,
+        generate2.zip,
+        generate2.houseNo,
+        generate2.prefix,
+        generate2.first,
+        generate2.last,
+        generate2.description,
+        generate2.summary,
+        generate2.label,
+        generate2.price,
+        generate.string,
+        generate.number,
+        generate.integer,
+        generate.boolean,
+        generate.array,
+        generate.object
+      ] )
+    );
+  }
+
+  app.use(pokemock.override);
 
   if ( options.memory ) {
     app.use(
