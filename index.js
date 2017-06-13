@@ -16,5 +16,6 @@ module.exports = {
   sendError: require( './lib/middleware/sendError' ),
   send: require( './lib/middleware/send' ),
   generate: require( './lib/generate' ),
-  generate2: require( './lib/generate2' )
+  generate2: require( './lib/generate2' ),
+  examples: require( './lib/middleware/examples' )
 };
